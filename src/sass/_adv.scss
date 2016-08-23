@@ -1,0 +1,26 @@
+$img-width: 155px;
+.adv {
+	background: #FFF;
+	padding-top: 50px;
+	padding-bottom: 40px;
+	text-align: center;
+	.adv-img {
+		display: inline-block;
+		margin: 0 15px;
+		background: url(../img/sprite_adv.png) no-repeat;
+		width: $img-width;
+		height: 64px;		
+	}
+}
+$shift1: 151;
+$start1: 151;
+
+@for $i from 1 through 6 {
+	.adv-img:nth-of-type(#{$i}) {
+		background-position-X: #{$start1 -$shift1*$i}px;	
+	}
+}
+
+.adv-img:nth-of-type(2) {
+  background-position-X: -147px;
+}

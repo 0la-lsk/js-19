@@ -1,0 +1,55 @@
+// $serv-color: #2A2D32;
+.services {
+	background: $serv-color;
+	padding-top: 45px;
+	padding-bottom: 70px;
+	font-family: $params-ff;
+	h3 {
+		color: #fff;
+		font-size: 24px;
+		margin-bottom: 55px;
+	}
+		.services--block__item {
+			display: inline-block;
+			max-width: 261px;
+			text-align: center;
+			margin-right: 36px;
+			&:last-child {margin-right: 0;}
+			&:hover {
+				.service-img {
+					p {
+						opacity: 1;
+						cursor: pointer;
+						background: rgba(45,144,234,0.9);
+					}
+				}
+				a {
+					color: $link-over;	
+				}				
+			}
+			.service-img {
+				width: 260px;
+				height: 260px;
+				margin-bottom: 33px;
+				p {
+					opacity: 0;
+					color: #FFF;
+					font-family: Symbol;
+					line-height: 261px;
+					text-align: center;
+					font-size: 80px;
+				}
+			}
+			a {
+				font-size: 16px;
+				color: #FFF;
+			}
+		}
+}
+
+@for $i from 1 through 4 {
+	.services--block__item:nth-of-type(#{$i}) .service-img {
+		background: url(../img/services#{$i}.jpg);
+		background-size: cover;
+	}
+}

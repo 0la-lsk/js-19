@@ -1,0 +1,20 @@
+.links {
+	background: $serv-color;
+	padding-top: 50px;
+	padding-bottom: 80px;
+	.link--block__list {
+		display: inline-block;
+		width: 24%;
+		h3 {
+			color: #FFF;
+			text-transform: uppercase;
+			@include news-font;
+			padding-bottom: 40px;
+		}
+		a {
+			@include news-font-plain;
+			line-height: 36px;
+			&:hover {color: $link-hover;}
+		}
+	}
+}

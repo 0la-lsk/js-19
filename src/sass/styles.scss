@@ -1,0 +1,39 @@
+@import "_reset";
+@import "_variables";
+
+@font-face {
+      font-family: 'symbols';
+      src: url('../fonts/symbols.eot?91922598');
+      src: url('../fonts/symbols.eot?91922598#iefix') format('embedded-opentype'),
+           url('../fonts/symbols.woff?91922598') format('woff'),
+           url('../fonts/symbols.ttf?91922598') format('truetype'),
+           url('../fonts/symbols.svg?91922598#symbols') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+$font-icons: symbols;
+
+.clearfix, .clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+$content-width: 1160px;
+.wrapper {
+	max-width: $content-width;
+	margin: 0 auto;
+}
+a {
+	text-decoration: none;
+}
+
+@import "_header";
+@import "_top-menu";
+@import "_slider";
+@import "_params";
+@import "_services";
+@import "_news";
+@import "_adv";
+@import "_links";
+@import "_footer";

@@ -1,0 +1,35 @@
+footer {
+	background: #35383c;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	span {
+		color: rgba(255,255,255,0.2);
+		font-family: Arial, sans-serif;
+		font-size: 12px;
+		margin-right: 30px;
+		&:before {
+	 		display: inline-block;
+	 		font-family: $font-icons;	
+			margin-right: 10px;
+		}
+		&:last-child {
+			float: right;
+			margin-right: 0;
+		}
+		&.footer-address {
+			&:before {
+		 		content:'\e803';
+			}
+		}
+		&.footer-phone {
+			&:before {
+			 	content:'\e804';
+			}
+		}
+		&.footer-mail {
+			&:before {
+			 	content:'\e805';
+			}
+		}
+	}
+}

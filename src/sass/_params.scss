@@ -1,0 +1,73 @@
+// $params-fcolor: rgba(42,43,46,0.1);
+// $params-ff: 'Ubuntu', sans-serif;
+// $params-grey: #8a8a8a;
+// $params-dark: #2a2b2e;
+
+.params {
+	padding-top: 70px;
+	padding-bottom: 53px;
+	.params--block {
+		width: 31.5%;
+		float: left;
+		font-family: $params-ff;
+		margin-right: 30px;
+		&:last-child {margin-right: 0;}
+		span {
+			color: $params-fcolor;
+			font-size: 87px;
+			line-height: 59px;
+			font-weight: 600;
+			letter-spacing: -0.2px;
+		}
+		.params--block__item {
+			float:right;
+			width: 68%;
+			h3 {
+				font-size: 20px;
+				color: $params-dark;
+				margin-left: 5px;
+				font-weight: 600;
+				margin-bottom: 25px;
+				&:before {
+					content:'';
+					display: block;
+					width: 35px;
+					height: 33px;
+					margin-bottom: 15px;
+					background: url(../img/sprite_params.png) no-repeat;
+				}
+			}				
+			p {
+				color: $params-grey;
+				font-family: Arial, sans-serif;
+				font-size: 13px;
+				line-height: 20px;
+				letter-spacing: 0.1px;
+			}
+			a {
+				color: $params-dark;
+				&:hover { 
+					color: $link-hover;
+					span { color: $params-grey;}
+				}
+				span {
+					font-size: 13px;
+					margin-left: 5px;
+					color: $link-hover;
+					font-family: $font-icons;
+				}
+			}
+		}
+	}
+}
+
+$shift: 38;
+$start:38;
+
+@for $i from 1 through 3 {
+	.params--block:nth-of-type(#{$i}) .params--block__item h3:before {
+		background-position-X: #{$start -$shift*$i}px;
+	
+	}
+}
+

@@ -1,0 +1,149 @@
+// $bg-news: #f7f7f7;
+@mixin news-font {
+	font-family: $params-ff;
+	font-weight: 600;
+}
+
+@mixin news-font-small {
+	font-size: 13px;
+	color: $serv-color;	
+}
+@mixin news-font-plain {
+	color: $params-grey;
+	font-family: Arial, sans-serif; 
+	font-size: 13px; 
+	line-height: 20px;
+}
+@mixin accordion($accordion-bcolor) {
+	display: inline-block;
+	border: 1px solid $accordion-bcolor;
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;	
+}
+.news {
+	background: $bg-news;
+	padding-top: 55px;
+	padding-bottom: 85px;
+	.news--block {
+		width: 561px;
+		max-width: 561px;
+		&:first-child {	float: left;}
+		&:last-child {	float: right;}
+
+		h1 {
+			@include news-font;
+			color: $serv-color;
+			font-size: 24px;
+			margin-bottom: 50px;
+		}
+		.news--block__info {
+			position: relative;
+			padding-bottom: 30px;
+			.news--block__calendar {
+				position: absolute;
+				left: -20px;
+				top: 12px;
+				span {
+					display: block;
+					width: 40px;
+					line-height: 40px;
+					font-family: $params-ff;
+					
+					text-align: center;
+					&:first-child {
+						background: $link-hover;
+						font-size: 15px;
+						color: #FFF;
+					}
+					&:last-child {
+						background: $link-over;
+						font-size: 18px;
+						font-weight: 600;
+						color: $params-dark;
+					}
+				}
+			}
+			img {
+				max-width: 150px;
+			}
+			.news--block__infotext {
+				width: 68%;
+				float:right;
+				font-family: $params-ff;
+				>a {
+					color: $serv-color;
+					font-size: 16px;
+					font-weight: 600;
+					line-height: 20px;
+					margin-bottom: 10px;
+					&:hover {color: $link-hover;}
+				}
+				p {
+					@include news-font-plain;
+					&:first-of-type {
+						padding-top: 5px;
+						padding-bottom: 20px;
+					}
+					a {
+						color: $link-hover;
+					}
+				}
+			}
+		}
+		.accordion--block {
+			padding-bottom: 5px;
+			.accordion--block__title {
+				background: #FFF;
+				text-decoration: uppercase;
+				color: $serv-color;
+				cursor: pointer;
+				@include news-font;
+				p {
+					@include accordion($accordion-border);
+					width: calc(100% - 58px);
+					text-transform: uppercase;
+					padding-left: 12px;	
+				}
+				span {
+					text-align: center;
+					@include accordion($accordion-border);
+					width: 40px;
+					font-size: 14px;
+					font-family: Verdana, sans-serif;
+					&:before {
+						content: '+';
+						display: block;
+					}
+				}
+			}
+			.accordion--block__text {
+				display: none;
+				@include news-font-plain;
+				padding: 20px 10px 35px 39px;
+				
+			}
+		}
+		.accordion--block__opened {
+  			transition: display 3s linear 7.5s;
+
+			.accordion--block__title {
+				background: $link-over;
+				color: #FFF;
+				p {
+					@include accordion($link-over);
+				}
+				span {
+					@include accordion($link-over);
+					&:before {
+						content: '-';
+						display: block;
+					}
+				}
+			}
+			.accordion--block__text {
+				display: block;
+			}
+		}
+	}
+}

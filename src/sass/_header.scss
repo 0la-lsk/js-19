@@ -1,0 +1,24 @@
+// $link-color: rgba(0,0,0,0.2);
+// $link-hover: #248cec;
+// $header-height: 40px;
+
+header {
+	padding-top: 35px;
+	padding-bottom: 33px;
+	.header--logo { max-height: $header-height; margin-left: 5px;}
+	.header--menu {
+		li {
+			display: inline-block;
+			margin-left: 15px;	
+			a {
+				font-family: $font-icons;
+				color: $link-color;
+				line-height: $header-height;
+				&:hover { color: $link-hover;} 		
+				font-size: 18px;
+			}
+		}
+		float: right;
+	}
+
+}
